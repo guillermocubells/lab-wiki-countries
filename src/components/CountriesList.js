@@ -1,23 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CountriesList({ countries }) {
-  // console.log('countries: ', countries);
+  //   console.log('countries: ', countries);
+  const navigate = useNavigate();
   return (
     <div className="">
-      <div className="">
-        {countries.map((country) => {
-          return (
-            <Link
-              key={country.alpha3Code}
-              to={`/${country.alpha3Code}`}
-              country={country}
-            >
-              <p>{country.name.official}</p>
-            </Link>
-          );
-        })}
-      </div>
+      {countries.map((country) => {
+        return (
+          <div
+            className=""
+            key={country.alpha3Code}
+            onClick={() => {
+              navigate(`/${country.alpha3Code}`);
+            }}
+          >
+            <img
+              src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
+              alt="flag"
+            />
+            <span>{country.name.common}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }
