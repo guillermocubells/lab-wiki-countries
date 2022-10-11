@@ -13,13 +13,13 @@ function CountryDetails({ countries }) {
         })
         .map((country) => {
           return (
-            <div key={country.alpha3Code}>
+            <div className="col-7" key={country.alpha3Code}>
               <h1>{country.name.common}</h1>
               <table className="table">
                 <thead></thead>
                 <tbody>
                   <tr>
-                    <td>Capital</td>
+                    <td style={{ width: '30%' }}>Capital</td>
                     <td>{country.capital}</td>
                   </tr>
                   <tr>
