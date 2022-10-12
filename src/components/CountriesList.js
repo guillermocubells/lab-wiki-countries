@@ -18,7 +18,7 @@ function CountriesList({ countries }) {
                   className="list-group-item list-group-item-action"
                   key={country.alpha3Code}
                   onClick={() => {
-                    navigate(`/${country.alpha3Code}`);
+                    navigate(`/country/${country.alpha3Code}`);
                   }}
                 >
                   <img

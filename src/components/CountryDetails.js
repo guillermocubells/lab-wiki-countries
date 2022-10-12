@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 // import countries from '../countries.json';
 
-function CountryDetails({ countries }) {
-  const { alpha3Code } = useParams();
+function CountryDetails({ countryDetail }) {
+  let { alpha3Code } = useParams();
 
   return (
-    <div className="">
-      {countries
+    <div className="col-7">
+      {countryDetail
         .filter((selectedCountry) => {
           return selectedCountry.alpha3Code === alpha3Code;
         })
